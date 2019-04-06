@@ -1,0 +1,25 @@
+.today {
+  p {
+    font-size: 2.2em;
+  }
+
+  fieldset {
+    border: solid 1px darkslategray;
+    padding: 30px;
+  }
+
+  input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: solid 1px darkslategray;
+  }
+
+  button {
+    padding: 10px;
+    width: 50%;
+    border: none;
+    background-color: darkslategray;
+    color: #fff;
+  }
+}

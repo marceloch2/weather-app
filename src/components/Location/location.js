@@ -47,7 +47,10 @@ export default {
           tab
         })
       } catch (error) {
-        console.log(error)
+        this.$store.commit(
+          'globalError',
+          `No Weather data found for ${this.$store.state.location.city}`
+        )
       }
     }
   }

@@ -8,11 +8,19 @@ export default {
     return {
       title: 'Choose your location',
       city: '',
-      country: ''
+      country: '',
+      hideCountry: false
     }
   },
 
-  mounted() {},
+  mounted() {
+    this.$refs.locationForm.addEventListener('submit', event => {
+      event.preventDefault()
+      this.search()
+    })
+  },
+
+  props: [ 'hasCountry' ],
 
   computed: mapState({
     location: state => state.location,
@@ -21,14 +29,22 @@ export default {
 
   watch: {
     tab: function(_old, _new) {
-      if (this.location.city !== '') {
+      if (this.city !== '') {
         this.search()
       }
+    },
+
+    hasCountry: function(_old, _new) {
+      this.hideCountry = !_new
     }
   },
 
   methods: {
     async search() {
+      if (this.city === '') {
+        return
+      }
+
       let tab = this.$store.state.tab
       this.$store.commit('setIsLoading', true)
 
@@ -43,6 +59,7 @@ export default {
           this.$store.state.location.country,
           tab
         )
+
         this.$store.commit('setWeatherData', {
           weatherData,
           tab

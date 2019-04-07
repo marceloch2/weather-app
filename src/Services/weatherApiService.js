@@ -30,7 +30,7 @@ export default class WeatherApiService {
     }
 
     return new Promise(async (resolve, reject) => {
-      let params = country ? `${city},${country}` : city
+      let params = country && type === 'forecast' ? `${city},${country}` : city
       let response = await fetch(
         `${WeatherApiService.url}/${type}?q=${params}&units=metric&APPID=${WeatherApiService.apiKey}`,
         {

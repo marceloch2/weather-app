@@ -1,26 +1,29 @@
 <template>
-  <div class="location">
+  <form class="location" ref="locationForm">
     <fieldset>
       <legend>{{ title.toUpperCase() }}</legend>
+
       <label for="today__city">City Name</label>
       <input
         type="text"
-        name="today__city"
+        id="today__city"
         class="today__city"
         placeholder="city name"
         v-model.trim="city"
       >
-      <label for="today__country">Country Code</label>
+
+      <label v-if="hideCountry" for="today__country">Country Code</label>
       <input
+        v-if="hideCountry"
         type="text"
-        name="today__country"
+        id="today__country"
         class="today__country"
         placeholder="country code"
         v-model.trim="country"
       >
-      <button @click="search">Update Data</button>
+      <button type="submit">Update Data</button>
     </fieldset>
-  </div>
+  </form>
 </template>
 
 <script>

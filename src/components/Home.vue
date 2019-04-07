@@ -13,7 +13,7 @@
     </div>
     <div class="home">
       <div class="home__center">
-        <Location/>
+        <Location :hasCountry="activeTab === 'weather' ? false : true "/>
         <div class="home_center-right">
           <div v-if="isLoading" class="lds-ripple">
             <div></div>
@@ -88,6 +88,10 @@ export default {
   },
 
   mounted() {
+    this.$store.commit("setCurrentLocation", {
+      city: "",
+      country: ""
+    });
     this.$store.commit("globalError", "");
   },
 

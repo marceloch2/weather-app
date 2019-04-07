@@ -30,6 +30,7 @@ export default {
   methods: {
     async search() {
       let tab = this.$store.state.tab
+      this.$store.commit('setIsLoading', true)
 
       this.$store.commit('setCurrentLocation', {
         city: this.city,
@@ -46,11 +47,19 @@ export default {
           weatherData,
           tab
         })
+
+        this.$store.commit('setIsLoading', false)
+        this.$store.commit('globalError', {
+          msg: '',
+          hasError: false
+        })
       } catch (error) {
-        this.$store.commit(
-          'globalError',
-          `No Weather data found for ${this.$store.state.location.city}`
-        )
+        this.$store.commit('setIsLoading', false)
+
+        this.$store.commit('globalError', {
+          msg: `No Weather data found for ${this.$store.state.location.city}`,
+          hasError: true
+        })
       }
     }
   }

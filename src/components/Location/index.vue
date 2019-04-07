@@ -2,9 +2,23 @@
   <div class="location">
     <fieldset>
       <legend>{{ title.toUpperCase() }}</legend>
-      <input type="text" class="today__country" placeholder="country" v-model.trim="city">
-      <input type="text" class="today__city" placeholder="city name" v-model.trim="country">
-      <button @click="search">Search</button>
+      <label for="today__city">City Name</label>
+      <input
+        type="text"
+        name="today__city"
+        class="today__city"
+        placeholder="city name"
+        v-model.trim="city"
+      >
+      <label for="today__country">Country Code</label>
+      <input
+        type="text"
+        name="today__country"
+        class="today__country"
+        placeholder="country code"
+        v-model.trim="country"
+      >
+      <button @click="search">Update Data</button>
     </fieldset>
   </div>
 </template>

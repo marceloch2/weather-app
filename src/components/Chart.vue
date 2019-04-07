@@ -1,23 +1,37 @@
 <template>
   <div class="weather__chart">
-    <div v-for="(_type, i) in types" :key="i" class="weather__chart-tool">
-      <button :disabled="type === _type" @click="changeType(_type)">{{formatTitle(_type)}}</button>
+    <div class="weather__chart-tool-wrapper">
+      <div v-for="(_type, i) in types" :key="i" class="weather__chart-tool">
+        <button
+          v-bind:class="[_type === type ? activeClass : '']"
+          :disabled="type === _type"
+          @click="changeType(_type)"
+        >{{formatTitle(_type)}}</button>
+      </div>
     </div>
 
     <div class="weather__chart-content">
-      <div class="weather__chart_data">
+      <div class="weather__chart-info">
         <img
+          class="weather__chart-img"
           v-if="currentWeatherIcon"
           :src=" `http://openweathermap.org/img/w/${currentWeatherIcon}.png`"
         >
-        <h1>{{ formatTitle(type) }}</h1>
-        <h3>{{ currentWeatherDate }}</h3>
-        <h4>{{ currentWeatherTime }}</h4>
-        <h2>
-          <span class="metric" v-html="metric"></span>
+        <p class="weather__chart-data" v-if="currentWeatherData">
+          <span v-if="type === 'temperature'" class="metric" v-html="metric"></span>
           {{ currentWeatherData }}
-        </h2>
-        <h5>{{ currentLocation.city }}</h5>
+          <span
+            v-if="type === 'wind_speed'"
+            class="metric"
+            v-html="wind_speed"
+          ></span>
+          <span v-if="type === 'humidity'" class="metric" v-html="humidity"></span>
+        </p>
+
+        <p class="weather__chart-city">{{ currentLocation.city }}</p>
+        <p class="weather__chart-type">{{ formatTitle(type) }}</p>
+        <p class="weather__chart-date">{{ currentWeatherDate }}</p>
+        <p class="weather__chart-time">{{ currentWeatherTime }}</p>
       </div>
 
       <div class="chart-container" style="position: relative; height: 10vh; width: 60vw">
@@ -37,6 +51,7 @@ const weatherLineChart = null;
 export default {
   data() {
     return {
+      activeClass: "active",
       currentWeatherIcon: "",
       currentWeatherData: "",
       currentWeatherDate: "",
@@ -62,7 +77,9 @@ export default {
   computed: mapState({
     currentLocation: state => state.location,
     weatherData: state => state.weatherData_forecast,
-    metric: state => state.metric
+    metric: state => state.metric,
+    wind_speed: state => state.wind_speed,
+    humidity: state => state.humidity
   }),
 
   watch: {
@@ -80,6 +97,7 @@ export default {
     },
 
     changeType(type) {
+      this.currentWeatherData = "";
       this.type = type;
 
       this.weatherLineChart.data.datasets[0].data = this.currentData[type];
@@ -218,18 +236,63 @@ export default {
 
 <style lang="scss" scoped>
 .weather__chart {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
   .weather__chart-content {
     width: 100%;
     display: flex;
     flex-flow: row;
 
-    .weather__chart_data {
+    .weather__chart-info {
       width: 200px;
+
+      p {
+        margin: 0;
+        padding: 5px;
+      }
+
+      .weather__chart-city {
+        font-size: 2em;
+        text-transform: uppercase;
+      }
+
+      .weather__chart-img {
+        width: 100px;
+      }
+
+      .weather__chart-type {
+        font-size: 1.6em;
+      }
+
+      .weather__chart-data {
+        font-size: 3em;
+      }
     }
   }
 
-  .weather__chart-tool {
-    display: inline;
+  .weather__chart-tool-wrapper {
+    border: solid 1px rgba(0, 100, 110, 0.8);
+    border-radius: 20px;
+    margin: 10px;
+
+    .weather__chart-tool {
+      display: inline;
+      padding: 10px;
+
+      button {
+        border: solid 1px rgba(0, 100, 110, 0.8);
+        border-radius: 20px;
+        padding: 5px 30px 5px 30px;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: rgba(0, 100, 110, 0.8);
+        color: #fff;
+      }
+    }
   }
 
   h1 {

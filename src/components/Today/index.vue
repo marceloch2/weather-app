@@ -1,7 +1,10 @@
 <template>
-  <div class="today" v-if="weatherData.weather">
-    <img :src=" `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`">
-    <p>{{ weatherData.weather[0].description }}</p>
+  <div class="today" v-if="weatherData.weather && !hasError">
+    <img
+      class="today__img"
+      :src=" `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`"
+    >
+    <p class="today__condition">{{ weatherData.weather[0].description }}</p>
     <p>
       <span class="metric" v-html="metric"></span>
       <strong>{{ weatherData.main.temp }}</strong>
@@ -9,9 +12,18 @@
     <p>
       Wind speed:
       <strong>{{ weatherData.wind.speed }}</strong>
+      <span class="metric" v-html="wind_speed"></span>
     </p>
-    <p>{{ location.city }}</p>
-    <p>{{ location.country }}</p>
+    <p>
+      Humidity:
+      <strong>{{ weatherData.wind.speed }}</strong>
+      <span class="metric" v-html="humidity"></span>
+    </p>
+    <p class="today__city">City: {{ location.city }}</p>
+    <p class="today__country" v-if="location.country !== ''">
+      Country:
+      <span>{{ location.country }}</span>
+    </p>
   </div>
 </template>
 

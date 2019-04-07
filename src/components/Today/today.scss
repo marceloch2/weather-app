@@ -22,4 +22,18 @@
     background-color: darkslategray;
     color: #fff;
   }
+
+  .today__condition {
+    text-transform: uppercase;
+  }
+
+  .today__city {
+    text-transform: capitalize;
+  }
+
+  .today__country {
+    span {
+      text-transform: uppercase;
+    }
+  }
 }

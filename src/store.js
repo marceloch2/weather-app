@@ -6,7 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    isLoading: false,
     metric: '&#8451;',
+    wind_speed: 'km',
+    humidity: '%',
     tab: 'weather',
     globalError: {
       hasError: false,
@@ -28,15 +31,19 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    setIsLoading(state, val) {
+      state.isLoading = val
+    },
+
     setTabType(state, tab) {
       state.tab = tab
     },
+
     globalError(state, err) {
-      state.globalError.msg = err
-      state.globalError.hasError = true
+      state.globalError.msg = err.msg
+      state.globalError.hasError = err.hasError
 
       setTimeout(() => {
-        state.globalError.hasError = false
         state.globalError.msg = ''
       }, 5000)
     },
@@ -44,6 +51,7 @@ export default new Vuex.Store({
     setUser(state, user) {
       state.user = user
     },
+
     setCurrentLocation(state, loc) {
       state.location.city = loc.city
       state.location.country = loc.country

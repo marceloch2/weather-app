@@ -15,7 +15,10 @@ export default {
   computed: mapState({
     location: state => state.location,
     weatherData: state => state.weatherData_weather,
-    metric: state => state.metric
+    metric: state => state.metric,
+    wind_speed: state => state.wind_speed,
+    humidity: state => state.humidity,
+    hasError: state => state.globalError.hasError
   }),
 
   watch: {

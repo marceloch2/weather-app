@@ -58,23 +58,14 @@ export default {
     let _self = this;
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
 
-          _self.$store.commit("setGeo", pos);
-        },
-        function() {
-          // globalError
-          // handleLocationError(true, infoWindow, map.getCenter());
-        }
-      );
-    } else {
-      // globalError
-      // Browser doesn't support Geolocation
+        _self.$store.commit("setGeo", pos);
+      });
     }
   },
   computed: {

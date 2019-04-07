@@ -15,8 +15,19 @@
       <div class="home__center">
         <Location/>
         <div class="home_center-right">
-          <Chart v-show="activeTab === 'forecast'" :ready="ready"/>
-          <Today v-show="activeTab === 'weather'"/>
+          <div v-if="isLoading" class="lds-ripple">
+            <div></div>
+            <div></div>
+          </div>
+
+          <div v-if="!isLoading && !hasError">
+            <Chart v-show="activeTab === 'forecast'"/>
+            <Today v-show="activeTab === 'weather'"/>
+          </div>
+
+          <div v-if="hasError && !isLoading" class="hasError">
+            <span>:(</span>
+          </div>
         </div>
       </div>
 
@@ -39,7 +50,6 @@ import { gmapApi } from "vue2-google-maps";
 export default {
   data() {
     return {
-      ready: false,
       activeTab: "weather"
     };
   },
@@ -63,11 +73,17 @@ export default {
 
   computed: {
     google: gmapApi,
+    isLoading() {
+      return this.$store.state.isLoading;
+    },
     errorMessage() {
       return this.$store.state.globalError.msg;
     },
     currentLocation() {
       return this.$store.state.location;
+    },
+    hasError() {
+      return this.$store.state.globalError.hasError;
     }
   },
 
@@ -85,6 +101,19 @@ export default {
 
 <style lang="scss">
 @import "Global.scss";
+
+.hasError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 8em;
+
+  span {
+    transform: rotate(65deg);
+  }
+}
 
 .app__topbar {
   background-color: #00646e;

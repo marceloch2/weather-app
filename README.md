@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+git checkout develop
 yarn install
 ```
 

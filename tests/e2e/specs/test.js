@@ -68,7 +68,7 @@ module.exports = {
       .click('.location button')
       .waitForElementVisible('.hasError', 1000)
       .assert.containsText('.hasError span', ':(')
-      .waitForElementVisible('.errorMessage', 1000)
+      .waitForElementVisible('.errorMessage', 2000)
       .assert.containsText('.errorMessage', 'No Weather data found for Haarlem')
       .pause(5000)
       // Error message hidded

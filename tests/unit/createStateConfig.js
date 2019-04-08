@@ -1,13 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
-
-import mutations from './Store/mutations'
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
+export default function createStateConfig() {
+  return {
     isLoading: false,
     metric: '&#8451;',
     wind_speed: 'km',
@@ -31,8 +23,5 @@ export default new Vuex.Store({
       lat: 10,
       lng: 10
     }
-  },
-  mutations,
-  actions: {},
-  plugins: [ createPersistedState() ]
-})
+  }
+}

@@ -5,6 +5,7 @@
 
       <label for="today__city">City Name</label>
       <input
+        autofocus
         type="text"
         id="today__city"
         class="today__city"

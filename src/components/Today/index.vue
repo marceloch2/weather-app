@@ -7,20 +7,20 @@
 
     <p class="today__condition">{{ weatherData.weather[0].description }}</p>
 
-    <p>
+    <p class="today__temp">
       <span class="metric" v-html="metric"></span>
       <strong>{{ weatherData.main.temp }}</strong>
     </p>
 
-    <p>
+    <p class="today__wind">
       Wind speed:
       <strong>{{ weatherData.wind.speed }}</strong>
       <span class="metric" v-html="wind_speed"></span>
     </p>
 
-    <p>
+    <p class="today__humidity">
       Humidity:
-      <strong>{{ weatherData.wind.speed }}</strong>
+      <strong>{{ weatherData.main.humidity }}</strong>
       <span class="metric" v-html="humidity"></span>
     </p>
 

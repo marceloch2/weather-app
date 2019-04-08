@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login.vue Snapshot 1`] = `
+<form class="login">
+  <fieldset>
+    <legend>[ LOGIN ]</legend> <input type="text" autofocus="autofocus" placeholder="username" class="login__username"> <input type="password" placeholder="password" class="login__password"> <button name="login" type="submit">Login</button>
+  </fieldset>
+</form>
+`;

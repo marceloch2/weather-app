@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Today.vue Snapshot 1`] = `
+<div class="today"><img src="http://openweathermap.org/img/w/50n.png" class="today__img">
+  <p class="today__condition">mist</p>
+  <p class="today__temp"><span class="metric">℃</span> <strong>12.8</strong></p>
+  <p class="today__wind">
+    Wind speed:
+    <strong>3.6</strong> <span class="metric">km</span></p>
+  <p class="today__humidity">
+    Humidity:
+    <strong>66</strong> <span class="metric">%</span></p>
+  <p class="today__city">City: Haarlem</p>
+</div>
+`;

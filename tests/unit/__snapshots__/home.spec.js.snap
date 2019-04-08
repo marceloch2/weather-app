@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.vue Snapshot 1`] = `
+<div>
+  <div class="app__topbar"></div>
+  <div class="app__menu">
+    <ul>
+      <li><a name="todayButton" href="#">Today</a></li>
+      <li><a name="chartButton" href="#">History</a></li>
+    </ul>
+  </div>
+  <div class="home">
+    <div class="home__center">
+      <location-stub></location-stub>
+      <div class="home__center-right">
+        <!---->
+        <div class="home__center-right-holder">
+          <chart-stub style="display: none;"></chart-stub>
+          <today-stub></today-stub>
+        </div>
+        <!---->
+      </div>
+    </div> <button class="logout">sign out</button>
+    <!---->
+  </div>
+</div>
+`;

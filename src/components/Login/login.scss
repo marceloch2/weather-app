@@ -1,12 +1,12 @@
 .login {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   fieldset {
     border: solid 1px darkslategray;
     padding: 30px;
     width: 400px;
-    height: 180px;
     background-color: rgba(255, 255, 255, 0.8);
   }
 
@@ -23,8 +23,5 @@
     border: none;
     background-color: darkslategray;
     color: #fff;
-  }
-
-  .login__username {
   }
 }

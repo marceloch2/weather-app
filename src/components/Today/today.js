@@ -4,7 +4,7 @@ export default {
   name: 'today',
   data() {
     return {
-      title: 'weather today',
+      title: 'Today Weather',
       city: '',
       country: ''
     }

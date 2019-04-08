@@ -8,24 +8,27 @@ export default {
       password: 'Demo12345'
     }
   },
-  mounted() {},
 
-  computed: {},
+  mounted() {
+    this.$refs.loginForm.addEventListener('submit', event => {
+      event.preventDefault()
+      this.login()
+    })
+  },
+
   methods: {
-    login() {
-      let logged = logins.filter(
+    getLoginData() {
+      return logins.filter(
         login => login.username === this.username && login.password === this.password
       )
-
-      if (logged.length) {
-        // this.$session.destroy()
+    },
+    login() {
+      if (this.getLoginData().length) {
         this.$session.start()
-        this.$session.set('jwt', logged[0].hash)
+        this.$session.set('jwt', this.getLoginData()[0].hash)
         this.$router.push('/home')
 
-        delete logged[0].password
-
-        this.$store.commit('setUser', logged[0])
+        this.$store.commit('setUser', this.getLoginData()[0])
       }
     }
   }

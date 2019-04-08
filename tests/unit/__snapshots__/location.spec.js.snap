@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location.vue Snapshot 1`] = `
+<form class="location">
+  <fieldset>
+    <legend>CHOOSE YOUR LOCATION</legend> <label for="today__city">City Name</label> <input autofocus="autofocus" type="text" id="today__city" placeholder="city name" class="today__city">
+    <!---->
+    <!----> <button type="submit">Update Data</button>
+  </fieldset>
+</form>
+`;

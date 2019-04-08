@@ -1,10 +1,15 @@
 .location {
   width: 400px;
   text-align: left;
-  padding: 10px;
+	padding: 10px;
+	
+	label {
+		padding-bottom: 5px;
+		display: block;
+	}
 
-  fieldset {
-    border: none;
+	fieldset {
+	  border: none;
     border-top: solid 1px darkslategray;
     padding: 30px;
     font-weight: bold;

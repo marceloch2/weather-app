@@ -1,13 +1,13 @@
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-  name: 'today',
+  name: "today",
   data() {
     return {
-      title: 'Today Weather',
-      city: '',
-      country: ''
-    }
+      title: "Today Weather",
+      city: "",
+      country: ""
+    };
   },
 
   mounted() {},
@@ -26,4 +26,4 @@ export default {
   },
 
   methods: {}
-}
+};

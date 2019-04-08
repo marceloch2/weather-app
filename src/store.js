@@ -1,29 +1,29 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
+import Vue from "vue";
+import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
-import mutations from './Store/mutations'
+import mutations from "./Store/mutations";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     isLoading: false,
-    metric: '&#8451;',
-    wind_speed: 'km',
-    humidity: '%',
-    tab: 'weather',
+    metric: "&#8451;",
+    wind_speed: "km",
+    humidity: "%",
+    tab: "weather",
     globalError: {
       hasError: false,
-      msg: ''
+      msg: ""
     },
     user: {
-      username: '',
-      hash: ''
+      username: "",
+      hash: ""
     },
     location: {
-      city: '',
-      country: ''
+      city: "",
+      country: ""
     },
     weatherData_weather: [],
     weatherData_forecast: [],
@@ -34,5 +34,5 @@ export default new Vuex.Store({
   },
   mutations,
   actions: {},
-  plugins: [ createPersistedState() ]
-})
+  plugins: [createPersistedState()]
+});

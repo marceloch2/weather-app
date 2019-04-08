@@ -1,21 +1,21 @@
 export default function createStateConfig() {
   return {
     isLoading: false,
-    metric: '&#8451;',
-    wind_speed: 'km',
-    humidity: '%',
-    tab: 'weather',
+    metric: "&#8451;",
+    wind_speed: "km",
+    humidity: "%",
+    tab: "weather",
     globalError: {
       hasError: false,
-      msg: ''
+      msg: ""
     },
     user: {
-      username: '',
-      hash: ''
+      username: "",
+      hash: ""
     },
     location: {
-      city: '',
-      country: ''
+      city: "",
+      country: ""
     },
     weatherData_weather: [],
     weatherData_forecast: [],
@@ -23,5 +23,5 @@ export default function createStateConfig() {
       lat: 10,
       lng: 10
     }
-  }
+  };
 }

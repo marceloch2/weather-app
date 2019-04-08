@@ -5,8 +5,8 @@ exports[`Home.vue Snapshot 1`] = `
   <div class="app__topbar"></div>
   <div class="app__menu">
     <ul>
-      <li><a name="todayButton" href="#">Today</a></li>
-      <li><a name="chartButton" href="#">History</a></li>
+      <li><a name="todayButton" href="#" class="active">Today</a></li>
+      <li><a name="chartButton" href="#" class="">History</a></li>
     </ul>
   </div>
   <div class="home">

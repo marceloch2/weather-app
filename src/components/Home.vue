@@ -4,10 +4,20 @@
     <div class="app__menu">
       <ul>
         <li>
-          <a name="todayButton" href="#" @click.prevent="tabs('weather')">Today</a>
+          <a
+            :class="[activeTab === 'weather' ? activeClass : '']"
+            name="todayButton"
+            href="#"
+            @click.prevent="tabs('weather')"
+          >Today</a>
         </li>
         <li>
-          <a name="chartButton" href="#" @click.prevent="tabs('forecast')">History</a>
+          <a
+            :class="[activeTab === 'forecast' ? activeClass : '']"
+            name="chartButton"
+            href="#"
+            @click.prevent="tabs('forecast')"
+          >History</a>
         </li>
       </ul>
     </div>
@@ -50,6 +60,7 @@ import { gmapApi } from "vue2-google-maps";
 export default {
   data() {
     return {
+      activeClass: "active",
       activeTab: "weather"
     };
   },

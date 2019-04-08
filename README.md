@@ -6,11 +6,6 @@ git checkout develop
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
 ### Lints and fixes files
 ```
 yarn run lint
@@ -25,6 +20,12 @@ yarn run test:e2e
 ```
 yarn run test:unit
 ```
+
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

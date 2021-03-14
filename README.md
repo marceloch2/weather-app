@@ -1,8 +1,6 @@
 # weather-vue-app
 
-```
-[First allow temporary access with](https://cors-anywhere.herokuapp.com/corsdemo)
-```
+IMPORTANT - [First allow temporary access with](https://cors-anywhere.herokuapp.com/corsdemo)
 
 ## Project setup
 ```

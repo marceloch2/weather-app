@@ -1,8 +1,7 @@
 # weather-vue-app
 
-# Get temporary access with https://cors-anywhere.herokuapp.com/corsdemo
 ```
-https://cors-anywhere.herokuapp.com/corsdemo
+# First allow temporary access with https://cors-anywhere.herokuapp.com/corsdemo
 ```
 
 ## Project setup
@@ -16,17 +15,17 @@ yarn install
 yarn run lint
 ```
 
-### Run your end-to-end tests
+#### Run your end-to-end tests
 ```
 yarn run test:e2e
 ```
 
-### Run your unit tests
+##### Run your unit tests
 ```
 yarn run test:unit
 ```
 
-### Compiles and hot-reloads for development
+###### Compiles and hot-reloads for development
 ```
 yarn run serve
 ```

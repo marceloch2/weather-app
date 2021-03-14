@@ -57,17 +57,16 @@
   height: 100%;
 
   .home__center-right {
-    display: flex;
     flex: 1 1 auto;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.7);
     min-height: 600px;
   }
-
+  
   .home__center {
-    width: 100%;
     display: flex;
-    flex-flow: row;
+    width: 100%;
+    flex-flow: row wrap;
   }
 }
 

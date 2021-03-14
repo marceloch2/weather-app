@@ -1,6 +1,6 @@
 # [weather-vue-app](https://weather-app.marceloch2.now.sh)
 
-IMPORTANT - [First allow temporary access with cors-anywhere](https://cors-anywhere.herokuapp.com/corsdemo)
+!!!IMPORTANT - [First allow temporary access with cors-anywhere](https://cors-anywhere.herokuapp.com/corsdemo)
 
 ## Project setup
 ```

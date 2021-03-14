@@ -1,4 +1,4 @@
-# weather-vue-app
+# [weather-vue-app](https://weather-app.marceloch2.now.sh)
 
 IMPORTANT - [First allow temporary access with cors-anywhere](https://cors-anywhere.herokuapp.com/corsdemo)
 
@@ -27,7 +27,3 @@ yarn run test:unit
 ```
 yarn run serve
 ```
-
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

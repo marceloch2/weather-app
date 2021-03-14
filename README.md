@@ -1,5 +1,10 @@
 # weather-vue-app
 
+# Get temporary access with https://cors-anywhere.herokuapp.com/corsdemo
+```
+https://cors-anywhere.herokuapp.com/corsdemo
+```
+
 ## Project setup
 ```
 git checkout develop
